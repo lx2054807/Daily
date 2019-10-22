@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class RollGame : MonoBehaviour
 {
     private int col = 5;
     private int row = 5;
