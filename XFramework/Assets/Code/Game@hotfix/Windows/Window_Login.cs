@@ -39,7 +39,14 @@ public class Window_Login : AWindow
         //01按钮
         btn_01.onClick.AddListener(() =>
         {
-            UIWidgetManager.Inst.GetWidgetWindow((int)WidgetEnum.Tips).Show("等会");
+            if (!UIWidgetManager.Inst.GetWidgetWindow((int) WidgetEnum.NewTips).IsOpen)
+            {
+                UIWidgetManager.Inst.GetWidgetWindow((int)WidgetEnum.NewTips).Show("再睡会");
+            }
+            else
+            {
+                UIWidgetManager.Inst.GetWidgetWindow((int)WidgetEnum.NewTips).Send("就再睡五分钟");
+            }
         });
         
         

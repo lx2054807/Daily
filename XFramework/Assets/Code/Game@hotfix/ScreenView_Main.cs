@@ -20,6 +20,7 @@ public class ScreenView_Main : IScreenView
         //加载窗口, 0是窗口id,建议自行换成枚举
         UIManager.Inst.LoadWindows((int) WinEnum.Login);
         UIWidgetManager.Inst.LoadWidget((int)WidgetEnum.Tips);
+        UIWidgetManager.Inst.LoadWidget((int)WidgetEnum.NewTips);
         UIManager.Inst.ShowWindow((int) WinEnum.Login);
         Debug.Log("进入main");
     }

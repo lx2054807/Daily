@@ -15,12 +15,14 @@ public class UIWidget_Tips : WidgetWindow
 
     private List<RectTransform> list_Transform = new List<RectTransform>();
     private GameObject go_Item;
-    private int num_MaxItem = 4;
-    private int height_Item = 120;
+    private int num_MaxItem;
+    private float height_Item;
 
     public override void Init()
     {
         base.Init();
+        num_MaxItem = 4;
+        height_Item = 120;
         go_Item = BResources.Load<GameObject>("Widget/Tips");
     }
 
@@ -28,31 +30,6 @@ public class UIWidget_Tips : WidgetWindow
     {
         base.Hide();
     }
-
-//    private RectTransform last_Trans;
-//    private void PushUp(RectTransform trans)
-//    {
-//        if (last_Trans != null)
-//        {
-//            if (trans.anchoredPosition.y <= height_Item * (num_MaxItem - 1) &&
-//                trans.anchoredPosition.y <= last_Trans.anchoredPosition.y - height_Item)
-//            {
-//                trans.DOAnchorPos(new Vector2(trans.anchoredPosition.x, trans.anchoredPosition.y + height_Item), 0.5f).OnComplete(
-//                    () =>
-//                    {
-//                        last_Trans = trans;
-//                    });
-//            }
-//        }
-//        else
-//        {
-//            trans.DOAnchorPos(new Vector2(trans.anchoredPosition.x, trans.anchoredPosition.y + height_Item), 0.5f).OnComplete(
-//                () =>
-//                {
-//                    last_Trans = trans;
-//                });
-//        }
-//    }
 
 
     private void Fade(RectTransform trans)
@@ -90,27 +67,6 @@ public class UIWidget_Tips : WidgetWindow
             Fade(tmp);
         }
     }
-
-//    private void ShowRecList()
-//    {
-//        for (int i = 0; i < list_Transform.Count; i++)
-//        {
-//            Fade(list_Transform[i]);
-//            if (list_Transform[i])
-//            {
-//                if (i != 0)
-//                {
-//                    PushUp(list_Transform[i - 1]);
-//                    
-//                    if (list_Transform[i - 1].anchoredPosition.y >= height_Item)
-//                    {
-//                        list_Transform[i].anchoredPosition = new Vector2(list_Transform[i - 1].anchoredPosition.x,
-//                            list_Transform[i - 1].anchoredPosition.y - height_Item);
-//                    }
-//                }
-//            }
-//        }
-//    }
 
     public override void Destroy()
     {

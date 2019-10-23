@@ -24,7 +24,11 @@ public class WidgetWindow
     /// 是否加载
     /// </summary>
     public bool IsLoad { get; private set; }
-
+    
+    /// <summary>
+    /// 是否打开
+    /// </summary>
+    public bool IsOpen { get; private set; }
 
     public void Load()
     {
@@ -78,12 +82,24 @@ public class WidgetWindow
     }
 
     /// <summary>
+    /// 发送
+    /// </summary>
+    /// <param name="o"></param>
+    /// <param name="truecallback"></param>
+    /// <param name="cancelcallback"></param>
+    public virtual void Send(object o = null, Action truecallback = null, Action cancelcallback = null)
+    {
+        
+    }
+
+    /// <summary>
     /// 打开
     /// </summary>
     public virtual void Show(object o = null, Action truecallback = null, Action cancelcallback = null)
     {
         this.Transform.SetAsLastSibling();
         this.Transform.gameObject.SetActive(true);
+        IsOpen = true;
     }
 
     /// <summary>
@@ -97,6 +113,7 @@ public class WidgetWindow
     {
         this.Transform.SetAsLastSibling();
         this.Transform.gameObject.SetActive(true);
+        IsOpen = true;
     }
 
     /// <summary>
@@ -105,6 +122,7 @@ public class WidgetWindow
     public virtual void Hide()
     {
         this.Transform.gameObject.SetActive(false);
+        IsOpen = false;
     }
 
     public virtual void Destroy()
