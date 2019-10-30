@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +6,8 @@ using BDFramework.ScreenView;
 using BDFramework.Sql;
 using BDFramework.UI;
 
-[ScreenView("main",true)]
-public class ScreenView_Main : IScreenView
+[ScreenView("Login",false)]
+public class ScreenView_Login : IScreenView
 {
     public string Name { get; private set; }
     public bool IsLoad { get; private set;     }
@@ -17,17 +17,11 @@ public class ScreenView_Main : IScreenView
         //一定要设置为true，否则当前是未加载状态
         this.IsLoad = true;
 
-        //加载窗口, 0是窗口id,建议自行换成枚举
-        UIManager.Inst.LoadWindows((int) WinEnum.Login);
-        UIWidgetManager.Inst.LoadWidget((int)WidgetEnum.Tips);
-        UIWidgetManager.Inst.LoadWidget((int)WidgetEnum.NewTips);
         UIManager.Inst.ShowWindow((int) WinEnum.Login);
-        Debug.Log("进入main");
     }
 
     public void BeginExit()
     {
-        UIManager.Inst.CloseWindow((int) WinEnum.Login);
     }
 
     public void Update(float delta)
