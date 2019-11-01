@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6600607120962147188}
   - component: {fileID: 8076517582441674876}
+  - component: {fileID: 3251577961230535230}
+  - component: {fileID: 4036685728216190520}
   m_Layer: 5
   m_Name: sPageList
   m_TagString: Untagged
@@ -57,6 +59,43 @@ MonoBehaviour:
   firsttarget: 0
   target: 2
   coefficient: 0.1
+--- !u!222 &3251577961230535230
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2401934614782514321}
+  m_CullTransparentMesh: 0
+--- !u!114 &4036685728216190520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2401934614782514321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
 --- !u!1 &4087399900233494429
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076232091637933302}
   m_Layer: 5
-  m_Name: Window_Login
+  m_Name: Window_Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

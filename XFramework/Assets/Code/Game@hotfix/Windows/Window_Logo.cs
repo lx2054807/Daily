@@ -1,5 +1,8 @@
-﻿﻿using System.Collections.Generic;
-using BDFramework;
+﻿﻿using System;
+using System.Collections.Generic;
+ using System.Net;
+ using System.Text.RegularExpressions;
+ using BDFramework;
 using BDFramework.ScreenView;
 using UnityEngine;
 using BDFramework.UI;
@@ -21,7 +24,11 @@ public class Window_Logo : AWindow
         (int) WinEnum.Main,
     };
     
-    List<int> list_Widget = new List<int>(){};
+    List<int> list_Widget = new List<int>()
+    {
+        (int) WidgetEnum.NewTips,
+        (int) WidgetEnum.Tips
+    };
     
     public Window_Logo(string path) : base(path)
     {
@@ -77,6 +84,7 @@ public class Window_Logo : AWindow
             loadIndex = 0;
             handle.localScale = new Vector3(0, 0, 1);
             UIWidgetManager.Inst.AsyncLoadWindows(list_Widget, null);
+            BDebug.Log("Widget加载完毕!");
         }
     }
 
