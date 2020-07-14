@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root scrollPosition_x="0" scrollPosition_y="0" aiName="TEST" aiType="Hero" rootNodeID="5" rootNodeCount="1">
+  <ID5 name="" type="4" windowPosition_x="320" windowPosition_y="464" children="2,6" />
+  <ID2 name="2" type="4" windowPosition_x="585" windowPosition_y="291" children="3,4" />
+  <ID3 name="3" type="0" windowPosition_x="854" windowPosition_y="171" returnType="0" />
+  <ID4 name="4" type="0" windowPosition_x="856" windowPosition_y="301" returnType="0" />
+  <ID6 name="6" type="6" windowPosition_x="596" windowPosition_y="563" children="7,8,9" />
+  <ID7 name="7" type="0" windowPosition_x="858" windowPosition_y="464" returnType="1" />
+  <ID8 name="8" type="0" windowPosition_x="857" windowPosition_y="615" returnType="0" />
+  <ID9 name="" type="7" windowPosition_x="867" windowPosition_y="777" loopTime="5" child="10" />
+  <ID10 name="" type="0" windowPosition_x="1108" windowPosition_y="762" returnType="0" />
+</root>
