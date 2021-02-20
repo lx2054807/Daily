@@ -67,11 +67,39 @@ void heap_sort(int arr[], int len)
 
 #pragma endregion
 
+#pragma region quicksort
+
+int partition(int arr[], int left, int right) 
+{
+	int pivot = arr[left];
+	while (left < right)
+	{
+		while (left < right && pivot <= arr[right]) { right--; }
+		arr[left] = arr[right];
+		while (left < right && pivot >= arr[left]) { left++; }
+		arr[right] = arr[left];
+	}
+	arr[left] = pivot;
+	return left;
+}
+
+void quick_sort(int arr[], int left, int right) 
+{
+	if (left < right) 
+	{
+		int pivot = partition(arr, left, right);
+		quick_sort(arr, left, pivot-1);
+		quick_sort(arr, pivot+1, right);
+	}
+}
+
+#pragma endregion
+
 int main()
 {
-	int arr[] = { 1,1,13,11,6,7,3 };
+	int arr[] = { 1,1,13,11,6,7,3,34,23,12,5,23,42,63,12,7,26,9,15 };
 	int len = (int)sizeof(arr) / (sizeof(*arr));
-	heap_sort(arr, len);
+	quick_sort(arr, 0,len-1);
 	for (int i = 0; i < len; i++) {
 		cout << arr[i] << endl;
 	}
