@@ -95,11 +95,73 @@ void quick_sort(int arr[], int left, int right)
 
 #pragma endregion
 
+#pragma region bubblesort
+
+void bubble_sort(int arr[], int len) 
+{
+	for (int i =0; i <= len; i++)
+	{
+		for (int j = i ; j <= len; j++) 
+		{
+			if (arr[i] > arr[j])
+			{
+				swap(arr[i], arr[j]);
+			}
+		}
+	}
+}
+
+#pragma endregion
+
+#pragma region selectsort
+
+void select_sort(int arr[], int len)
+{
+	for (int i =0; i<= len; i++)
+	{
+		int min = i;
+		for (int j = i; j <= len; j++)
+		{
+			if (arr[min] > arr[j])
+			{
+				min = j;
+			}
+		}
+		swap(arr[i], arr[min]);
+	}
+}
+
+#pragma endregion
+
+#pragma region insertsort
+
+void insert_sort(int arr[], int len)
+{
+	for (int i = 1; i <= len; i++)
+	{
+		int tmp = arr[i];
+		for(int j = i-1; j >=0;j--)
+		{
+			if (arr[j] > tmp) 
+			{
+				arr[j + 1] = arr[j];
+				arr[j] = tmp;
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+}
+
+#pragma endregion
+
 int main()
 {
 	int arr[] = { 1,1,13,11,6,7,3,34,23,12,5,23,42,63,12,7,26,9,15 };
 	int len = (int)sizeof(arr) / (sizeof(*arr));
-	quick_sort(arr, 0,len-1);
+	insert_sort(arr,len-1);
 	for (int i = 0; i < len; i++) {
 		cout << arr[i] << endl;
 	}
