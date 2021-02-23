@@ -49,12 +49,38 @@ int rand_01()
 /// 密码的机密性支撑了随机数的不可预测性
 #pragma endregion
 
+#pragma region calculate_pi
+/// <summary>
+/// 一个均匀分布的浮点数 = 随机生成很多很多一定范围内的点,构成一个矩(正方)形
+/// 以正方形边长为半径的圆的四分之一面积在矩形内
+/// 计算这些随机分布的点, 距离原点距离小于等于1的点在圆上,其他在正方形上
+/// 所有圆上的点/所有正方形上的点 = pi*r*r/4 / r*r = pi / 4
+/// </summary>
+/// <returns></returns>
+float calculate_pi()
+{
+	int counts = 100000000;
+	int hits = 0;
+	for(int i = 0; i<counts; i++)
+	{
+		float x = rand()/double(RAND_MAX), y = rand() / double(RAND_MAX);
+		float dis = pow((x * x + y * y), 0.5f);
+		if (dis <= 1.0)
+		{
+			hits++;
+		}
+	}
+	return 4.0f * ((float)hits / counts);
+}
+
+#pragma endregion
+
 int main() 
 {
 	cout << rand_01()<<endl;
 	cout << rand_01() << endl;
 	cout << rand_01() << endl;
 	cout << rand_01() << endl;
-
+	cout << calculate_pi() << endl;
 	return 0;
 }
